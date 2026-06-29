@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "nav head"
+        "nav main"
+        "nav foot";
+    min-height: 100vh;
+}
+
+header {
+    grid-area: head;
+    background-color: #4b89d4;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+footer {
+    grid-area: foot;
+    background-color: rgb(66, 64, 64);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+}
+
+main {
+    grid-area: main;
+    background-color: #f0f0f0;
+    margin: 10px 20px 10px 10px;
+    padding: 10px;
+}
+
+/* === ÉTAPE 3 : Menu latéral, fond noir === */
+nav {
+    grid-area: nav;
+    background-color: rgb(66, 64, 64);
+    padding-top: 10px;
+    border-top-left-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: white;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: rgb(66, 64, 64);
+    min-width: 150px;
+    padding: 5px;
+    margin: 0;
+    z-index: 100;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color:  rgb(66, 64, 64);
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+nav ul li a:hover {
+    background-color: red;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 4px solid rgb(80, 77, 77);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+article {
+    background-color: white;
+    border-radius: 8px;
+    border: 4px solid rgb(80, 77, 77);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+section:first-of-type img {
+    transition: transform 0.4s ease;
+}
+
+section:first-of-type img:hover {
+    transform: rotate(10deg);
+}
+
+section:nth-of-type(2) article img {
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+section:nth-of-type(2) article img:hover {
+    transform: scale(1.1);
+    border: 2px solid #0057a8;
+}
+
+@keyframes vaEtVient {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+
+section:nth-of-type(2) > img:first-of-type {
+    animation: vaEtVient 1.5s ease-in-out infinite;
+}

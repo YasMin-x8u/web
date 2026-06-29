@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+        <script src="valider.js"></script>
+
+    <form action="page.php" method="post">
+        <table>
+            <tr>
+                <td>Sexe :</td>
+                <td>
+                    <input type="radio" name="genre" value="Homme"> Homme
+                    <input type="radio" name="genre" value="Femme"> Femme
+                </td>
+                <td><span id="errSexe" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Nom :</td>
+                <td><input type="text" id="nom" name="nom"></td>
+                <td><span id="errNom" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Prenom :</td>
+                <td><input type="text" id="prenom" name="prenom"></td>
+                <td><span id="errPrenom" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Age :</td>
+                <td><input type="text" id="age" name="age"></td>
+                <td><span id="errAge" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Pseudo :</td>
+                <td><input type="text" id="pseudo" name="pseudo"></td>
+                <td><span id="errPseudo" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Mot de passe :</td>
+                <td><input type="password" id="mdp" name="mdp"></td>
+                <td><span id="errMdp" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Mot de passe (confirmation) :</td>
+                <td><input type="password" id="mdpConfirm" name="mdpConfirm"></td>
+                <td><span id="errMdpConfirm" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td>Pays :</td>
+                <td>
+                    <select id="pays" name="pays">
+                        <option value="">Selectionnez votre pays de residence</option>
+                        <option value="maroc">Maroc</option>
+                        <option value="france">France</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="korea">Korea</option>
+                    </select>
+                </td>
+                <td><span id="errPays" class="erreur"></span></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" id="newsletter">
+                    Je desire recevoir la newsletter chaque mois.
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="validerFormulaire()">envoyer</button>
+                    <button type="button" onclick="reinitialiser()">Reinitialiser le formulaire</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

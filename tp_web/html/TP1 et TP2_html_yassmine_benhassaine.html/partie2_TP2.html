@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+</head>
+
+<body >
+
+<form action="page.php" method="get">
+
+    <h1>Formulaire pour un enquête sur ...</h1>
+
+    <table>
+
+        <tr>
+            <td>Nom:</td>
+            <td><input type="text" name="nom"></td>
+        </tr>
+
+        <tr>
+            <td>Prénom:</td>
+            <td><input type="text" name="prenom"></td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+
+        <tr>
+            <td>Sexe:</td>
+            <td>
+                <input type="radio" name="genre" value="Homme"> Homme
+                <input type="radio" name="genre" value="Femme"> Femme
+            </td>
+        </tr>
+
+        <tr>
+            <td>Date Naissance:</td>
+            <td><input type="date" name="dateNais"></td>
+        </tr>
+
+        <tr>
+            <td>Intérêts:</td>
+            <td>
+                <input type="checkbox" name="interets[]" value="HTML"> HTML
+                <input type="checkbox" name="interets[]" value="CSS"> CSS
+                <input type="checkbox" name="interets[]" value="JavaScript"> JavaScript
+                <input type="checkbox" name="interets[]" value="PHP"> PHP
+            </td>
+        </tr>
+
+        <tr>
+            <td>Filières:</td>
+            <td>
+                <select name="profil">
+                    <option value="gi">GI</option>
+                    <option value="dwm">DWM</option>
+                    <option value="ia">IA</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Proposition:</td>
+            <td>
+                <textarea name="proposition" rows="10" cols="32"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Proposer">
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+
+</body>
+</html>

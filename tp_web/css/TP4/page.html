@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="la">
+    <head>
+        <title>CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+       <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="conteneur">
+          <img id="imgTop" src="images/banner.jpg"/>
+          <div id="menu">
+               <ul>
+                   <li><a href="#"> Acceuil</a></li>
+                   <li><a href="#">Formations</a>
+                      <ul>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                      </ul>
+                    </li>
+                   <li><a href="#">CV </a></li>
+                   <li><a href="#">Contact</a></li>
+               </ul>
+            </div>
+        <div id="contenu">
+            <h1>Feuilles de style en cascade </h1>
+            <p >Les feuilles de style en cascade, généralement appelées CSS de l'anglais <span style = "background-color: yellow";>Cascading Style Sheets</span>.
+            Elles forment un langage informatique qui décrit la présentation des documents HTML, <span style = "background-color: yellow";>HyperText Markup Language</span>.
+            Les standards définissant CSS sont publiés par le <span style = "background-color: yellow";>World Wide Web Consortium (W3C)</span>.
+        </p>
+        <p > Introduit au milieu des années 1990.
+            CSS devient couramment utilisé dans la conception de sites web.
+            Il pris en charge par les navigateurs web dans les années 2000.     
+        </p>
+        <h2>Historique</h2>
+        <div id="historique">
+        <p >
+            Les feuilles de style n'est pas à proprement parler une nouveauté 
+            dans le domaine de la publication Html. 
+            Introduit en 1997 par Microsoft avec son Internet Explorer 3.0 
+            D'abord les browsers 4.0 de Microsoft et de Netscape reconnaissent tous deux les feuilles de style et surtout, 
+            la norme Html 4.0 en a repris le concept 
+        </p>
+         <p class="backColor">
+        
+           Première version du CSS, CSS 1d dès 1996, dispose de 
+            Elle pose les bases de ce langage qui permet de présenter sa page web, 
+            comme les couleurs, les marges, les polices de caractères, etc. 
+       </p>
+        <p class="backColor" >
+            Douxième version, CSS 2 , apparue en 1999 puis complétée par CSS 2.1, 
+            cette nouvelle version de CSS rajoute de nombreuses options. 
+            On peut désormais utiliser des techniques de positionnement très précises, 
+            qui nous permettent d'afficher des éléments où on le souhaite sur la page.   
+        </p>
+        <p class="backColor">
+             Dernière version, CSS3,
+             apporte des fonctionnalités particulièrement attendues comme 
+            les bordures arrondies, les dégradés, les ombres, etc.
+        </p>
+    </div>
+        <h1>Type d'integration du style</h1>
+        <h2>A l'intérieur des balises HEAD </h2>
+        <p>
+            Cette façon de procéder est de loin la plus commune et la plus logique. 
+            D'abord parce que les balises HEAD contiennent des informations pour le browser
+            et les feuilles de style appartiennent à celles-ci. 
+            Ensuite parce que l'on rejoint ainsi l'essence même des feuilles de style
+             qui est de séparer les éléments de mise en forme du contenu.
+        </p>
+        <h2>A l'intérieur des balises BODY </h2>
+        <p>On peut aussi utiliser, au coup par coup, 
+            les feuilles de style dans le corps (BODY) du document.
+        </p>
+        <p>
+            Cette façon de faire nous paraît illogique et peu conforme à l'esprit des feuilles de style
+            qui est de définir un style déterminé valable pour la globalité du document. 
+            Mais elle  existe pour quelques utilisations spécifiques...  
+        
+           </p>
+        <h2>Styles externes.</h2>
+        <p>C'est déjà bien de pouvoir définir une présentation de style valable pour une page (styles
+            internes). Mais CSS nous propose mieux. 
+        </p>
+        <p>
+            Définir une présentation de style valable pour plusieurs pages et même pour toutes les pages d'un site. Ce qui est possible, en créant une
+            page externe qui regroupera toutes les feuilles de style, et en reliant chaque page html à cette page de style. 
+            On crée d'abord, dans le répertoire du site, un fichier avec l'extension « .css » 
+        </p>
+        <h1>Liste des propriétés </h1>
+                <ol>
+                    <li>Les styles de police
+                        <ul>
+                            <li>font-family </li>
+                            <LI>font-style </LI>
+                            <li>font-weight </li>
+                            <li>...</li>
+                        </ul>
+                    </li>
+                    <li> Les styles du texte
+                        <ul>
+                            <li>text-align </li>
+                            <li>text-indent </li>
+                            <li>....</li>
+                        </ul>
+                    </li>  
+                    <li>...</li>
+                </ol>      
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+#conteneur{
+    width: 800px;
+    background-image: url(images/imgback.jpg);
+    padding: 10px auto ;
+    margin:5px auto;
+}
+#imgTop{
+    width: 800px;
+    height: 200px;
+}
+h1{
+    text-align: center;
+}
+h2{
+    color: blue;
+    background-color: goldenrod;
+}
+p{
+    text-align: justify;
+    text-indent: 16px;
+
+}
+.backColor {
+    background-color: yellow;
+}
+#historique{
+    background-color: rgb(226, 43, 180);
+    font-style: italic;
+    font-family: Georgia;
+    border: 2px dashed grey
+}
+p::first-letter{
+    font-weight: bold;
+    color: red;
+    font-size: 1.5em;
+}
+h1{
+    border: 2px solid black;
+    margin: 50px;
+    background-color: red;
+    width: 75%;
+    margin: 20px auto;
+
+}
+h2{
+    width: 90%;
+    padding: 10px auto;
+    margin-left: 10px;
+    font-size: 1.7em;
+}
+ol{
+    list-style-type: upper-roman ;
+    font-style: italic;
+    color: green;
+    font-size: 1.4em;
+}
+ol > li > ul {
+    list-style-type: disc;
+    color: blueviolet;
+    font-size: 0.9em;
+}
+#menu {
+    height: 100px;
+}
+
+#menu ul li {
+    float: left;
+    list-style: none;
+    position: relative;
+}
+#menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+#menu ul li ul li {
+    clear: both;
+    float: none;
+    list-style: none;
+}
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 4px 0 4px;
+    background-color: black;
+    display: block;
+    text-align: center;
+    width: 150px;
+    border: 2px solid white;
+    font-weight: bold;
+}
+#menu ul li a:hover {
+    border: 5px solid pink;
+    color: black;
+    background-color: white;
+}
+#menu ul li:hover > ul {
+    display: block;
+}
+
+#menu ul li ul li a:hover {
+    border: 5px solid pink;
+    color: black;
+    background-color: white;
+}
+#contenu {
+    padding: 10px 20px;
+}
+#menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}

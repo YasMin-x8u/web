@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Feedback du service public de meknes</h2>
+    <form action="enregistrer.php" method="get">
+        <br action="afficher.php" method="get">
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom" id="nom"><br><br>
+            <label for="prenom">Prenom:</label>
+            <input type="text" name="prenom" id="prenom">
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <br><br>
+            <label for="genre">Genre:</label>
+            <input type="radio" name="genre" value="H">Homme:
+            <input type="radio" name="genre" value="F">Femme: <br><br>
+            Quartiers:
+            <select name="quartiers" id="quartiers">
+                <option value="Marjane">Marjane</option>
+                <option value="basatin">Basatin</option>
+
+            </select><br><br>
+            votre message:
+            <textarea name="message" id="message" rows="6" cols="40"></textarea>
+            <br><br>
+            <button type="submit">Envoyer</button>
+
+        </form>
+</body>
+
+</html>

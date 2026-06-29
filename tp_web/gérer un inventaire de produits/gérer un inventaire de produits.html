@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventaire des Produits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-bottom: 30px;
+        }
+        th {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        h3 {
+            color: #2e7d32;
+            text-align: center;
+        }
+        .analyse {
+            background: white;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Produit(nom, quantite, prixUnitaire) {
+            this.nom = nom;
+            this.quantite = quantite;
+            this.prixUnitaire = prixUnitaire;
+            this.dateAjout = new Date();
+
+            this.valeurTotale = function() {
+                return parseFloat((this.quantite * this.prixUnitaire).toFixed(2));
+            };
+
+            this.formaterDate = function() {
+                return this.dateAjout.toLocaleDateString() + " " + this.dateAjout.toLocaleTimeString();
+            };
+        }
+
+        let n;
+        do {
+            n = parseInt(prompt("Entrez le nombre de produits à ajouter à l'inventaire :"));
+        } while (isNaN(n) || n <= 0);
+
+        let inventaire = [];
+
+        for (let i = 0; i < n; i++) {
+            let nom, quantite, prixUnitaire;
+
+            do {
+                nom = prompt("Produit " + (i + 1) + " - Nom :");
+            } while (nom === null || nom.trim() === "");
+
+            do {
+                quantite = parseFloat(prompt("Produit " + (i + 1) + " - Quantité :"));
+            } while (isNaN(quantite) || quantite < 0);
+
+            do {
+                prixUnitaire = parseFloat(prompt("Produit " + (i + 1) + " - Prix unitaire :"));
+            } while (isNaN(prixUnitaire) || prixUnitaire < 0);
+
+            inventaire.push(new Produit(nom.trim(), quantite, prixUnitaire));
+        }
+
+        let tableHTML = "<h2>Inventaire des Produits</h2>";
+        tableHTML += "<table>";
+        tableHTML += "<tr><th>Nom</th><th>Quantité</th><th>Prix Unitaire (DH)</th><th>Valeur Totale (DH)</th><th>Date d'Ajout</th></tr>";
+
+        for (let i = 0; i < inventaire.length; i++) {
+            let p = inventaire[i];
+            tableHTML += "<tr>";
+            tableHTML += "<td>" + p.nom + "</td>";
+            tableHTML += "<td>" + p.quantite + "</td>";
+            tableHTML += "<td>" + p.prixUnitaire.toFixed(2) + "</td>";
+            tableHTML += "<td>" + p.valeurTotale().toFixed(2) + "</td>";
+            tableHTML += "<td>" + p.formaterDate() + "</td>";
+            tableHTML += "</tr>";
+        }
+        tableHTML += "</table>";
+
+        let valeurTotaleInventaire = 0;
+        let produitPlusCher = inventaire[0];
+        let produitPlusGrandeQuantite = inventaire[0];
+
+        for (let i = 0; i < inventaire.length; i++) {
+            valeurTotaleInventaire += inventaire[i].valeurTotale();
+            if (inventaire[i].prixUnitaire > produitPlusCher.prixUnitaire) {
+                produitPlusCher = inventaire[i];
+            }
+            if (inventaire[i].quantite > produitPlusGrandeQuantite.quantite) {
+                produitPlusGrandeQuantite = inventaire[i];
+            }
+        }
+
+        let analyseHTML = "<h3>Analyse de l'Inventaire</h3>";
+        analyseHTML += "<div class='analyse'>";
+        analyseHTML += "<p>Valeur totale de l'inventaire : <strong>" + valeurTotaleInventaire.toFixed(2) + " DH</strong></p>";
+        analyseHTML += "<p>Produit le plus cher : <strong>" + produitPlusCher.nom + " (" + produitPlusCher.prixUnitaire.toFixed(2) + " DH)</strong></p>";
+        analyseHTML += "<p>Produit avec la plus grande quantité : <strong>" + produitPlusGrandeQuantite.nom + " (" + produitPlusGrandeQuantite.quantite + " unités)</strong></p>";
+        analyseHTML += "</div>";
+
+        document.write(tableHTML + analyseHTML);
+    </script>
+</body>
+</html>
